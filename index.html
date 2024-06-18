@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- <meta name="description"
+        content="HyperNeRF handles topological variations by modeling a family of shapes in a higher-dimensional space, thereby producing more realistic renderings and more accurate geometric reconstructions.">
+  <meta name="keywords" content="HyperNeRF, Nerfies, D-NeRF, NeRF"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <meta property="og:image" content="./static/images/thumbnail.png"/>
+  <link rel="image_src" href="./static/images/thumbnail.png"> -->
+  <!-- <link rel="icon"
+        type="image/x-icon"
+        href="./static/images/favicon.png"/> -->
+  <link rel="icon" type="image/x-icon" href="assets/icon_GN.png">
+
+
+  <title>GUI Action Narrator</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EDF010G6PN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-EDF010G6PN');
+
+
+  </script>
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="./static/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css" />
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <style>
+    .navbar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #90EE90;
+      position: fixed;
+      width: 100%;
+      transition: background-color 0.5s ease;
+      /* 为背景颜色改变添加过渡效果 */
+    }
+
+    .navbar.scrolled {
+      background-color: #90EE90;
+    }
+
+    .navbar li {
+      float: left;
+    }
+
+    .navbar li a {
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      transition: color 0.5s ease;
+      /* 为文本颜色改变添加过渡效果 */
+    }
+
+    .navbar.scrolled li a {
+      color: white;
+    }
+    .publication-title {
+      color: green; /* Changed color to green */
+    }
+    .link-block .icon,
+    .link-block .icon > i {
+      color: lightgreen; /* Change icon color */
+    }
+    /* .navbar li a:hover {
+      background-color: #111;
+    } */
+
+  </style>
+
+  <script>
+    window.onscroll = function () {
+      var navbar = document.getElementById('navbar');
+      if (window.pageYOffset > 0) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <ul class="navbar" id="navbar">
+    <li><a href="#home"><img src="assets/icon_GN.png" alt="Home"
+          style="height:30px; width:30px; vertical-align:middle; margin-right:5px;"> <strong>GUI Action Narrator</strong> </a>
+    </li>
+  </ul>
+
+  <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div> -->
+  <!-- <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div> -->
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <!-- <div class="column is-4 has-text-centered">
+          <img src="static/images/logo.svg" alt="HyperNeRF"/>
+        </div> -->
+        </div>
+        <div class="container has-text-centered">
+          <h1 class="title is-2 publication-title">
+            <br>
+            <img src="assets/icon_GN.png" alt="Home"
+          style="height:80px; width:80px; vertical-align:middle; margin-right:5px;">GUI Action Narrator: Where and When Did That Action Take Place?
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <div class="author-block">
+              Qinchen Wu,<sup>1</sup></div>
+            <div class="author-block">
+              Difei Gao,<sup>1</sup></div>
+            <div class="author-block">
+              Kevin Qinghong Lin,<sup>1</sup></div>
+            <div class="author-block">
+              Zhuoyu Wu<sup>2</sup>,
+              </div>
+            <br>
+            <div class="author-block">
+              Xiangwu Guo,<sup>1</sup></div>
+            <div class="author-block">
+              Peiran Li,<sup>1</sup></div>
+            <div class="author-block">
+              Weichen Zhang,<sup>1</sup></div>
+            <div class="author-block">
+              Hengxu Wang,<sup>1</sup></div>
+            <div class="author-block">
+             Mike Zheng Shou<sup>1</sup>
+            </div>
+
+          </div>
+
+          <div class="is-size-5 publication-authors">
+<!--             <span class="author-block"><sup>♤</sup>Show Lab, National University of Singapore,</span>
+            <span class="author-block"><sup>♢</sup>Chinese Academy of Sciences, Shenzhen</span> -->
+
+            <span class="author-block"><sup>1</sup>Show Lab, National University of Singapore,</span>
+            <span class="author-block"><sup>2</sup>Chinese Academy of Sciences, Shenzhen</span>
+          
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://openreview.net/pdf?id=o3yygm3lnzS"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper (comi)</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs//2312.13108" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/showlab/GUI-Narrator"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (coming soon)</span>
+                </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+              <a href=""
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="far fa-images"></i>
+                </span>
+                <span>Data</span>
+                </a>
+              </span> -->
+              <div></br></div>
+              <!-- <div class="is-size-5 publication-authors">
+                <span class="author-block"><b></b></span>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <center>
+<!--           <video id="teaser" autoplay controls muted loop playsinline width="70%">
+            <source src="./assets/assistgui_demo_v1.mp4" type="video/mp4">
+          </video> -->
+          <figure style="width: 90%;">
+            <a href="assets/demonstrate_video.gif">
+              <img width="90%" src="assets/demonstrate_video.gif">
+          </a>
+            <p class="caption" style="margin-bottom: 1px;  text-align: justify">
+            We introduce GUI action dataset Act2Cap as well as an effective framework: GUI Narrator for GUI video captioning that utilizes the cursor as a visual prompt to enhance the interpretation of high-resolution screenshots. 
+            </p>
+          </figure>
+          <!-- </br>
+        </br> -->
+
+          <!-- <video id="teaser" autoplay controls muted loop playsinline width="70%">
+          <source src="./assets/vc_128_stitched_demo.mp4"
+                  type="video/mp4">
+        </video> -->
+        </center>
+        <!-- <h2 class="subtitle has-text-centered">
+        PV3D is able to generate diverse videos with multi-view consistency and detailed dynamic 3D geometry. 
+      </h2> -->
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              The advent of Multimodal LLMs has significantly enhanced image OCR recogni
+tion capabilities, making GUI automation a viable reality for increasing efficiency
+ in digital tasks. One fundamental aspect of developing a GUI automation system is
+ understanding primitive GUI actions. This comprehension is crucial as it enables
+ agents to learn from user demonstrations, an essential element of automation. To
+ rigorously evaluate such capabilities, we developed a video captioning benchmark
+ for GUI actions, comprising 4,189 diverse video captioning samples. This task
+ presents unique challenges compared to natural scene video captioning: 1) GUI
+ screenshots typically contain denser information than natural scenes, and 2) events
+ within GUIs are subtler and occur more rapidly, requiring precise attention to the
+ appropriate time span and spatial region for accurate understanding. To address
+ these challenges, we introduce our GUI action dataset Act2Cap as well as a
+ simple yet effective framework, GUI Narrator , for GUI video captioning that uti
+lizes the cursor as a visual prompt to enhance the interpretation of high-resolution
+ screenshots. Specifically, a cursor detector is trained on our dataset, and a mul
+timodal LLM model with mechanisms for selecting keyframes and key regions
+ generates the captions. Experimental results indicate that even for today’s most
+ advanced multimodal models, such as GPT-4o, the task remains highly challenging.
+ Additionally, our evaluations show that our strategy effectively enhances model
+ performance, whether integrated into the fine-tuning of open-source models or
+ employed as a prompting strategy in closed-source models. Moreover, we propose an advanced Actor-Critic Embodied Agent framework, which incorporates a sophisticated GUI parser driven by an LLM-agent and an enhanced reasoning mechanism adept at handling lengthy procedural tasks. Our experimental results reveal that our GUI Parser and Reasoning mechanism outshine existing methods in performance. Nevertheless, the potential remains substantial, with the best model attaining only a 46% success rate on our benchmark. We conclude with a thorough analysis of the current methods' limitations, setting the stage for future breakthroughs in this domain.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <h2 class="title is-3">Main contributions</h2>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+            <p>
+              Our work emphasis on the following three aspects 
+            <ul>
+              <li><strong>Dataset:</strong> </li>
+              <li><strong>Benchmark:</strong> </li>
+              <li><strong>Model baseline:</strong></li>
+<!--               <li><strong>Critic:</strong> Assess every previous action to help Actor adjust the following steps.</li> -->
+            </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      </br>
+      <CENter>
+        <img src="./assets/pipeline.png" alt="描述文字">
+
+        <!-- <video id="teaser" autoplay controls muted loop playsinline width="70%">
+          <source src="./assets/AssistGUI_method.png" type="video/mp4">
+        </video>
+
+        <video id="teaser" autoplay controls muted loop playsinline width="70%">
+          <source src="./assets/badminton.mp4" type="video/mp4">
+        </video>
+
+        <video id="teaser" autoplay controls muted loop playsinline width="70%">
+          <source src="./assets/gopro.mp4" type="video/mp4">
+        </video>
+
+        <video id="teaser" autoplay controls muted loop playsinline width="70%">
+          <source src="./assets/cook.mp4" type="video/mp4">
+        </video> -->
+
+
+
+
+      </CENter>
+
+    </div>
+    </div>
+    </br>
+    </br>
+    </br>
+    </br>
+
+    
+
+
+
+<!--     <section class="section" id="BibTeX">
+      <div class="container content is-max-desktop">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@article{gao2023assistgui,
+      title = {AssistGUI: Task-Oriented Desktop Graphical User Interface Automation},
+      author = {Difei Gao and Lei Ji and Zechen Bai and Mingyu Ouyang and Peiran Li and Dongxing Mao and Qinchen Wu and Weichen Zhang and Peiyi Wang and Xiangwu Guo and Hengxu Wang and Luowei Zhou and Mike Zheng Shou},  
+      year = {2023}, -->
+
+</code></pre>
+      </div>
+    </section>
+
+
+    <footer class="footer">
+      <div class="container">
+        <!-- <div class="content has-text-centered">
+          <a class="icon-link" href="https://openreview.net/pdf?id=o3yygm3lnzS">
+            <i class="fas fa-file-pdf"></i>
+          </a>
+          <a class="icon-link" href="https://github.com/bytedance/pv3d" class="external-link" disabled>
+            <i class="fab fa-github"></i>
+          </a>
+        </div> -->
+        <div class="columns is-centered">
+          <div class="column is-6">
+            <div class="content">
+              <p>
+<!--                 The source code of this webpage is based on the <a href="https://github.com/nerfies/nerfies.github.io/">
+                  Nerfies</a> project webpage. -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="./static/slick/slick.min.js"></script>
+</body>
+
+</html>
