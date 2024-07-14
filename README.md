@@ -1,4 +1,4 @@
-## GUI Action Narrator:Where and When Did That Action Take Place?
+## GUI Action Narrator: Where and When Did That Action Take Place?
 Qinchen Wu, Difei Gao, Kevin Qinghong Lin, Zhuoyu Wu, Xiangwu Guo, Peiran Li, Weichen Zhang, Hengxu Wang, Mike Zheng Shou
 
 [![Project Website](https://img.shields.io/badge/Project-Website-blue)](https://showlab.github.io/GUI-Narrator/)
