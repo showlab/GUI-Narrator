@@ -15,7 +15,7 @@ We introduce GUI action dataset **Act2Cap** as well as an effective framework: *
 
 ---
 
-- Download **ACT2CAP** dataset, which consists of 10-frame GUI screenshot sequences depicting atomic actions. **[**Download link here**](**https://drive.google.com/file/d/18cL3ByBkEMI-eTKrelaEXWeiF3QwZAAl/view?usp=drive_link**)**.
+- Download **ACT2CAP** dataset, which consists of 10-frame GUI screenshot sequences depicting atomic actions. **[Download link here](https://drive.google.com/file/d/18cL3ByBkEMI-eTKrelaEXWeiF3QwZAAl/view?usp=drive_link)**.
 - Narrations based on 10 frames screenshots in `.data_annotation` . Please replace the  `<path>`  placeholder with the root path of ACT2CAP image files
     ```{
     "id": "identity_3",
