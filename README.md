@@ -12,7 +12,7 @@ We introduce GUI action dataset **Act2Cap** as well as an effective framework: *
 
 - 19 Jun 2024: We release our paper on Arxiv.
 - 15 Aug 2024: The automatic collected datasets and human demonstration datasets are available.
-
+- 22 Sep 2024: Release pipeline for Cursor detection and Key Frame Extraction module. Here we support 10 frames sampled from video.
 ---
 
 - Download **ACT2CAP** dataset, which consists of 10-frame GUI screenshot sequences depicting atomic actions. **[Download link here](https://drive.google.com/file/d/18cL3ByBkEMI-eTKrelaEXWeiF3QwZAAl/view?usp=drive_link)**.
@@ -38,3 +38,19 @@ We introduce GUI action dataset **Act2Cap** as well as an effective framework: *
     Where `a`, `b` denotes the start and the end frame index respectively. `x` denotes the folder index.
     The terms `Prompt` and `Crop` refers to screen shot with visual prompt and cropped detailed images generated depend on cursor detection module. 
     However, if you are interested in the original images, you can substitute them with `frame_idx`. 
+---
+- Download **Cursor detection and Key frame extraction checkpoint** from **[Download link here](https://drive.google.com/file/d/1ChrpBuPL7W84mKNsSsbueff5EGlyB3h2/view?usp=sharing)**
+
+- Import supporting packages
+  ```
+  pip install -r requirements.txt
+  ```
+
+- Run inference code as below, the visual prompts and cropped images will be generated in folder `frames_sample `
+   ``` 
+       cd model
+       python run_model.py \
+       --frame_extract_model_path /path/to/checkpoint_key_frames \
+       --yolo_model_path /path/to/Yolo_best \
+       --images_path /path/to/frames_sample 
+   ```
