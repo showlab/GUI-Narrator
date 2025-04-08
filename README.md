@@ -2,20 +2,27 @@
 
 Qinchen Wu, Difei Gao, Kevin Qinghong Lin, Zhuoyu Wu, Xiangwu Guo, Peiran Li, Weichen Zhang, Hengxu Wang, Mike Zheng Shou
 
-[![Project Website](https://img.shields.io/badge/Project-Website-blue)](https://showlab.github.io/GUI-Narrator/)
+<!-- [![Project Website](https://img.shields.io/badge/Project-Website-blue)](https://showlab.github.io/GUI-Narrator/) -->
 
 ## 🤖: Introduction
 
-We introduce GUI action dataset **Act2Cap** as well as an effective framework: **GUI Narrator** for GUI video captioning that utilizes the cursor as a visual prompt to enhance the interpretation of high-resolution screenshots.
+We introduce GUI action dataset **Act2Cap** as well as an effective framework: **GUI Narrator** for GUI video captioning that utilizes the cursor detection to enhance the interpretation of high-resolution screenshots and keyframe extraction in GUI actions.
 
-## 📑: Events
 
-- 19 Jun 2024: We release our paper on Arxiv.
-- 15 Aug 2024: The automatic collected datasets and human demonstration datasets are available.
-- 22 Sep 2024: Release pipeline for Cursor detection and Key Frame Extraction module. Here we support 10 frames sampled from video.
----
+## 📋 ToDo List
 
-- Download **ACT2CAP** dataset, which consists of 10-frame GUI screenshot sequences depicting atomic actions. **[Download link here](https://drive.google.com/file/d/18cL3ByBkEMI-eTKrelaEXWeiF3QwZAAl/view?usp=drive_link)**.
+- [x] Model for Cursor detector and Narrator
+- [ ] Code of conduct
+
+
+-- Our model and test benchmark are availble on  [![Hugging Face](https://img.shields.io/badge/Demo-HuggingFace-blue)](https://huggingface.co/spaces/FRank62Wu/ShowUI-Narrator)
+
+
+
+
+
+
+<!-- - Download **ACT2CAP** dataset, which consists of 10-frame GUI screenshot sequences depicting atomic actions. **[Download link here](https://drive.google.com/file/d/18cL3ByBkEMI-eTKrelaEXWeiF3QwZAAl/view?usp=drive_link)**.
 - Narrations based on 10 frames screenshots in `.data_annotation` . Please replace the  `<path>`  placeholder with the root path of ACT2CAP image files
     ```{
     "id": "identity_3",
@@ -53,4 +60,4 @@ We introduce GUI action dataset **Act2Cap** as well as an effective framework: *
        --frame_extract_model_path /path/to/checkpoint_key_frames \
        --yolo_model_path /path/to/Yolo_best \
        --images_path /path/to/frames_sample 
-   ```
+   ``` -->
