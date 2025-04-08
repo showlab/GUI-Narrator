@@ -15,7 +15,7 @@ We introduce GUI action dataset **Act2Cap** as well as an effective framework: *
 - [ ] Code of conduct
 
 
--- Our model and test benchmark are availble on  [![Hugging Face](https://img.shields.io/badge/Demo-HuggingFace-blue)](https://huggingface.co/spaces/FRank62Wu/ShowUI-Narrator)
+-- Our model and test benchmark are availble on  [![Hugging Face](https://img.shields.io/badge/Demo-HuggingFace-blue)](https://huggingface.co/FRank62Wu/ShowUI-Narrator).
 
 
 
